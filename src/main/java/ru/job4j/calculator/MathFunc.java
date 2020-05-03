@@ -14,7 +14,5 @@ public class MathFunc {
 
     public static void main(String[] args) {
         int result1 = MathFunc.func1(100);
-
     }
-
 }
