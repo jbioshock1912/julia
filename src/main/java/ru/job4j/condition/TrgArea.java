@@ -3,7 +3,7 @@ package ru.job4j.condition;
 public class TrgArea {
     public static double area(double a, double b, double c) {
         double halfMeter = (a + b + c) / 2; // вычисляем полупериметр
-        double rsl =Math.sqrt(halfMeter * (halfMeter - a) * (halfMeter - b) * (halfMeter - c)) ;
+        double rsl = Math.sqrt(halfMeter * (halfMeter - a) * (halfMeter - b) * (halfMeter - c));
         return rsl;
     }
 

@@ -16,9 +16,15 @@ package ru.job4j.calculator;
 
         public static void main(String[] args) {
             int euro = Converter.rubleToEuro(140);
-            int dollar = Converter.rubleToDollar(140);
+            int dollar = Converter.rubleToDollar(180);
             System.out.println("140 rubles are " + euro + " euro.");
             System.out.println("140 rubles are " + dollar + " dollars");
+            int expectedEuro = 2;
+            int expectedDollar = 3;
+            boolean passedEuro = expectedEuro == euro;
+            boolean passedDollar = expectedDollar == dollar;
+            System.out.println("140 rubles are 2 euro. Test result : " + euro);
+            System.out.println("140 rubles are 3 dollars. Test result : " + dollar);
         }
     }
 
