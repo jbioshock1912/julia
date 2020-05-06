@@ -1,7 +1,7 @@
 package ru.job4j.condition;
 
 public class SqArea {
-    public static double square(int p, int k) {
+    public static double square(double p, double k) {
         double height = p / (2 * (k + 1));  // вычисяем высоту треугольника
         double length = height * k; // вычисояем длину треугольника
         double rsl = length * height;
