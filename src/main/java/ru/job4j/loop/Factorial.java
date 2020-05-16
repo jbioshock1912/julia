@@ -1,7 +1,7 @@
 package ru.job4j.loop;
 
-public class Factorial {
-    public static int calc(int n) {
+public   class Factorial {
+    private static int calc(int n) {
         int result = 1;
         if (n == 0) {
             return result;
@@ -10,6 +10,15 @@ public class Factorial {
                 result = result * i;
             }
         }
+        return result;
+    }
+
+    private int factorial(int n) {
+        int result = 1;
+        if (n == 1 || n == 0) {
+            return result;
+        }
+        result = n * factorial(n - 1);
         return result;
     }
 }

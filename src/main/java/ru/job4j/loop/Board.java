@@ -8,7 +8,6 @@ public class Board {
                     System.out.print("X");
                 } else {
                     System.out.print(" ");
-
                 }
             }
             System.out.println();

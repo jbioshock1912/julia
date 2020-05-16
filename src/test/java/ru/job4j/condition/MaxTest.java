@@ -23,5 +23,4 @@ public class MaxTest {
         int result = Max.max(3, 3);
         assertThat(result, is(3));
     }
-
 }
