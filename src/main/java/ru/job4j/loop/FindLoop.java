@@ -14,7 +14,7 @@ public class FindLoop {
 
     public static int indexOf(int[] data, int el, int start, int finish) {
         int rst = -1; // если элемента нет в массиве, то возвращаем -1.
-        for (int index = start; index < finish; index++) {
+        for (int index = start; index < finish; index++) { // так финишную включать или нет? index <= finish???
             if (data[index] == el) {
                 rst = index;
                 break;
