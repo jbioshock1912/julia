@@ -38,4 +38,16 @@ public class MinDiapasonTest {
                 is(2)
         );
     }
+
+    @Test
+    public void whenMinusFiveMin() {
+        assertThat(
+                MinDiapason.findMin(
+                        new int[] {10, 2, 5, 1, 12, -4, -5, 4, 7},
+                        3, 6
+                ),
+                is(-5)
+        );
+    }
+
 }
