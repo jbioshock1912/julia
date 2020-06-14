@@ -13,5 +13,6 @@ public class BarleyBreak {
         table[2][0] = 9;
         table[2][1] = 9;
         table[2][2] = 9;
+        System.out.println("Привет, Юлек");
     }
 }
