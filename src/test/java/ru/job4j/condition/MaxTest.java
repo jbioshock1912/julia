@@ -12,6 +12,7 @@ public class MaxTest {
         int result = Max.max(1, 2);
         assertThat(result, is(2));
     }
+
     @Test
     public void whenMax3To4Then4() {
         int result = Max.max(3, 4);
@@ -24,23 +25,17 @@ public class MaxTest {
         assertThat(result, is(3));
     }
 
-
     @Test
     public void whenMaxThirdThen10() {
-
         int result = Max.max(2, 1, 10);
         assertThat(result, is(10));
     }
 
     @Test
     public void whenMaxSecondThen11() {
-
         int result = Max.max(2, 11, 5);
         assertThat(result, is(11));
     }
-
-
-
 
     @Test
     public void whenMaxFourthThen10() {

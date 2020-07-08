@@ -49,5 +49,4 @@ public class TriangleTest {
 
         return testTriangle;
     }
-
 }
