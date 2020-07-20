@@ -40,13 +40,18 @@ public class TrackerTest {
         Tracker tracker = createTracker();
         String key = "one";
         Item[] result = tracker.findByName(key);
-        assertThat(2, is(2));
+        Item[] actual = new Item;
+        assertThat(actual, is(result));
 
     }
 
     @Test
     public void findById() {
         Tracker tracker = createTracker();
+        Item[] result =  tracker.findAll();
+        String testId = result[1].getId();
+        Item resultId = tracker.findById(testId);
+        assertThat(testId, is(result[1].getId()));
 
     }
 }
