@@ -65,12 +65,43 @@ public class Tracker {
         return keep;
     }
 
-    public Item findById(String id) {
+    /*public Item findById(String id) {
         for (Item value : items) {
             if (value.getId().equals(id)) {
                 return value;
             }
         }
         return null;
+    }*/
+
+    public Item findById(String id) {
+// Находим индекс
+        int index = indexOf(id);
+// Если индекс найден возвращаем item, иначе null
+        return index != -1 ? items[index] : null;
+    }
+
+    private int indexOf(String id) {
+        int rsl = -1;
+        for (int index = 0; index < position; index++) {
+            if (items[index].getId().equals(id)) {
+                rsl = index;
+                break;
+            }
+        }
+        return rsl;
+    }
+
+    public boolean replace(String id, Item item) {
+        boolean result = true;
+        int index = indexOf(id);
+        if (index != -1) {
+            items[index] = item;
+            item.setId(id);
+            return result;
+        } else {
+            result = false;
+        }
+        return result;
     }
 }

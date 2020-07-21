@@ -40,7 +40,7 @@ public class TrackerTest {
         Tracker tracker = createTracker();
         String key = "one";
         Item[] result = tracker.findByName(key);
-        Item[] actual = new Item;
+        Item[] actual = new Item[100];
         assertThat(actual, is(result));
 
     }
@@ -53,5 +53,16 @@ public class TrackerTest {
         Item resultId = tracker.findById(testId);
         assertThat(testId, is(result[1].getId()));
 
+    }
+
+    @Test
+    public void whenReplace() {
+        Tracker tracker = new Tracker();
+        Item bug = new Item("Bug");
+        tracker.add(bug);
+        String id = bug.getId();
+        Item bugWithDesc = new Item("Bug with description");
+        tracker.replace(id, bugWithDesc);
+        assertThat(tracker.findById(id).getName(), is("Bug with description"));
     }
 }
