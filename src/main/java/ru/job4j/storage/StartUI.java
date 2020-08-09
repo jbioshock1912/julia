@@ -78,5 +78,4 @@ public class StartUI {
         start.showMenu();
         start.init(scanner, tracker);
     }
-
 }
