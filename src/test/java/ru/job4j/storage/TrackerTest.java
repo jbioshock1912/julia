@@ -1,3 +1,4 @@
+/*
 package ru.job4j.storage;
 
 import org.junit.Test;
@@ -19,7 +20,7 @@ public class TrackerTest {
         return tracker;
     }
 
-    ,..jk m @Test
+     @Test
     public void whenAddNewItemThenTrackerHasSameItem() {
         Tracker tracker = new Tracker();
         Item item = new Item("test1");
@@ -79,3 +80,4 @@ public class TrackerTest {
     public void whenDeleteThenOk() {
     }
 }
+*/
