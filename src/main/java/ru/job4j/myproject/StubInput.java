@@ -1,4 +1,6 @@
-package ru.job4j.storage;
+package ru.job4j.myproject;
+
+import ru.job4j.myproject.Input;
 
 public class StubInput implements Input {
     @Override

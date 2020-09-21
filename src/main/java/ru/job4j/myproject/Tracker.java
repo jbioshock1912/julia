@@ -1,4 +1,6 @@
-package ru.job4j.storage;
+package ru.job4j.myproject;
+
+import ru.job4j.storage.Item;
 
 import java.util.Arrays;
 import java.util.Random;
@@ -64,7 +66,7 @@ public class Tracker {
         return rsl;
     }
 
-    public boolean replace(String id, Item item) {
+    public boolean replace(String id, Item item) throws Exception {
         boolean result = true;
         int index = indexOf(id);
         if (index != -1) {
@@ -77,15 +79,18 @@ public class Tracker {
         return result;
     }
 
-    public boolean delete(String id) {
-        items[indexOf(id)] = null;
+    public boolean delete(String id) throws Exception {
         int index = indexOf(id);
+        if (index == -1) {
+            return false;
+        }
+        items[index] = null;
         int start = index + 1;
         int distPos = index;
         int size = position - index;
         System.arraycopy(items, start, items, distPos, size);
         items[position - 1] = null;
         position--;
-        return false;
+        return true;
     }
 }
