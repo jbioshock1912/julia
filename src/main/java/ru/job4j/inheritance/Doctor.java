@@ -8,5 +8,7 @@ public class Doctor extends Profession {
         return illness;
     }
 
-
+    public Diagnose getIllness() {
+        return illness;
+    }
 }

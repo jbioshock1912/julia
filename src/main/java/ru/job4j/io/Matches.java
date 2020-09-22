@@ -5,7 +5,6 @@ import java.util.Scanner;
 public class Matches {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-
         int numberOfMatches = 11;
         while (numberOfMatches > 1) {
             System.out.println("ходит первый игрок");
