@@ -10,7 +10,6 @@ public class Student {
     private Date start;
     private int group;
 
-
     public String getLastName() {
         return lastName;
     }
