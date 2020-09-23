@@ -3,18 +3,44 @@ package ru.job4j.io;
 import java.util.Scanner;
 
 public class Matches {
-    public static void main(String[] args) {
+
+    public int enterNumber() {
         Scanner input = new Scanner(System.in);
-        int numberOfMatches = 11;
-        while (numberOfMatches > 1) {
-            System.out.println("ходит первый игрок");
-            int selectOne = Integer.valueOf(input.nextLine());
-            numberOfMatches = numberOfMatches - selectOne;
-            System.out.println(numberOfMatches);
-            System.out.println("ходит второй игрок");
-            int selectTwo = Integer.valueOf(input.nextLine());
-            numberOfMatches = numberOfMatches - selectTwo;
-            System.out.println(numberOfMatches);
+        int gamer = Integer.valueOf(input.nextLine());
+        return gamer;
+    }
+
+    public boolean checkNumber(int number) {
+        return number <= 3 && number >= 1;
+    }
+
+    public static void main(String[] args) {
+        Matches matches = new Matches();
+        int allMatches = 11;
+        System.out.println(allMatches);
+        System.out.println("начальное количество спичек: 11");
+        boolean winner = true;
+
+        do {
+            if (winner) {
+                System.out.println("ходит 1 игрок");
+            } else {
+                System.out.println("ходит 2 игрок");
+            }
+            int numberOfMatches = matches.enterNumber();
+            if (!matches.checkNumber(numberOfMatches)) {
+                System.out.println("введите число от 1 до 3 включительно");
+            } else {
+                allMatches = allMatches - numberOfMatches;
+                System.out.println(allMatches);
+                winner = !winner;
+            }
+        } while (allMatches >= 1);
+        if (!winner) {
+            System.out.println("победил игрок 1");
+
+        } else {
+            System.out.println("победил игрок 2");
         }
     }
 }
