@@ -4,7 +4,7 @@ public interface Transport {
 
     public void toDrive();
 
-    public void numberOfPeople(int number);
+    public void fillNumberOfPeople(int number);
 
     public double takeOil(double oil);
 }
