@@ -4,13 +4,19 @@ import ru.job4j.myproject.Input;
 
 public class StubInput implements Input {
 
-    @Override
-    public String askStr(String question) {
-        return null;
+    private String[] answers;
+    private int position = 0;
+
+    public StubInput(String[] answers) {
+        this.answers = answers;
     }
 
     @Override
+    public String askStr(String question) {
+        return answers[position++];
+    }
+    @Override
     public int askInt(String question) {
-        return 0;
+        return Integer.valueOf(askStr(question));
     }
 }
