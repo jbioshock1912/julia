@@ -4,14 +4,14 @@ import ru.job4j.storage.Item;
 
 public class StartUI {
 
-    public void createNewItem(Input input, Tracker tracker) {
+    public static void createNewItem(Input input, Tracker tracker) {
         System.out.println("=== Create a new Item ====");
         String name = input.askStr("Enter name: ");
         Item item = new Item(name);
         tracker.add(item);
     }
 
-    public void showAllItems(Tracker tracker) {
+    public static void showAllItems(Tracker tracker) {
         System.out.println("=== Show all items ===");
         Item[] items = tracker.findAll();
         for (Item value : items
@@ -20,7 +20,7 @@ public class StartUI {
         }
     }
 
-    public void editItem(Tracker tracker, Input input) throws Exception {
+    public static void editItem(Tracker tracker, Input input) throws Exception {
         System.out.println("=== Edit item ===");
         String id = input.askStr("Enter id");
         if (tracker.replace(id, new Item())) {
@@ -30,7 +30,7 @@ public class StartUI {
         }
     }
 
-    public void deleteItem(Tracker tracker, Input input) throws Exception {
+    public static void deleteItem(Tracker tracker, Input input) throws Exception {
         System.out.println("=== Delete item ===");
         String id = input.askStr("Enter id");
         if (tracker.delete(id)) {
@@ -40,13 +40,13 @@ public class StartUI {
         }
     }
 
-    public void findItemById(Tracker tracker, Input input) {
+    public static void findItemById(Tracker tracker, Input input) {
         System.out.println("=== find item by id ===");
         String id = input.askStr("Enter id");
         System.out.println(tracker.findById(id));
     }
 
-    public void findByName(Tracker tracker, Input input) {
+    public static void findByName(Tracker tracker, Input input) {
         System.out.println("=== find by name ===");
         String name = input.askStr("enter name");
         Item[] result = (tracker.findByName(name));
@@ -57,34 +57,42 @@ public class StartUI {
     }
 
 
-    public void init(Input input, Tracker tracker) throws Exception {
+    public static void init(Input input, Tracker tracker) throws Exception {
         boolean run = true;
         while (run) {
-            this.showMenu();
+            showMenu();
             int numberOfMenu = input.askInt("Select: ");
 
             switch (numberOfMenu) {
 
                 case 0:
                     createNewItem(input, tracker);
+                    break;
                 case 1:
                     showAllItems(tracker);
+                    break;
                 case 2:
                     editItem(tracker, input);
+                    break;
                 case 3:
                     deleteItem(tracker, input);
+                    break;
                 case 4:
                     findItemById(tracker, input);
+                    break;
                 case 5:
                     findByName(tracker, input);
+                    break;
                 case 6:
                     run = false;
+                    break;
 
+                default:break;
             }
         }
     }
 
-    private void showMenu() {
+    private static void showMenu() {
         System.out.println("Menu. \n"
                 + "0. Add new Item\n"
                 + "1. Show all items\n"
