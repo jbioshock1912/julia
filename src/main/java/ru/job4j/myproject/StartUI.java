@@ -44,6 +44,7 @@ public class StartUI {
         System.out.println("=== find item by id ===");
         String id = input.askStr("Enter id");
         System.out.println(tracker.findById(id));
+
     }
 
     public static void findByName(Tracker tracker, Input input) {
