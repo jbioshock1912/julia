@@ -2,6 +2,8 @@ package ru.job4j.myproject;
 
 import ru.job4j.storage.Item;
 
+import java.util.ArrayList;
+
 public class ShowAllItemsAction implements UserAction {
     @Override
     public String name() {
@@ -10,11 +12,13 @@ public class ShowAllItemsAction implements UserAction {
 
     @Override
     public boolean execute(Input input, Tracker tracker) {
-        Item[] items = tracker.findAll();
-        for (Item value : items
-        ) {
+        ArrayList<Item> items = tracker.findAll();
+        for (Item value: items
+             ) {
             System.out.println(value);
+
         }
+
         return true;
     }
 }
