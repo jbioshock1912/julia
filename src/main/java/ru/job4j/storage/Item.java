@@ -1,8 +1,9 @@
 package ru.job4j.storage;
 
+import java.util.Comparator;
 import java.util.Objects;
 
-public class Item {
+public class Item implements Comparator<Item> {
 
     private String id;
     private String name;
@@ -32,6 +33,11 @@ public class Item {
     }
 
     @Override
+    public int compare(Item first, Item second) {
+        return first.getName().compareTo(second.getName());
+    }
+
+    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
@@ -52,4 +58,5 @@ public class Item {
                 ", name='" + name + '\'' +
                 '}';
     }
+
 }
