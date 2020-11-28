@@ -5,15 +5,13 @@ import java.util.List;
 
 public class ConvertList {
     public static List<Integer> convert(List<int[]> list) {
-        List<Integer> rsl = new ArrayList<>();
-        for (var value : list
-        ) {
-            for (var secondValue : value
-            ) {
-                rsl.add(secondValue);
+        List<Integer> convertedNumbers = new ArrayList<>();
+        for (var value : list) {
+            for (var secondValue : value) {
+                convertedNumbers.add(secondValue);
             }
         }
-        return rsl;
+        return convertedNumbers;
     }
 
     public static void main(String[] args) {

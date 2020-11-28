@@ -3,12 +3,10 @@ package ru.job4j.myproject;
 import ru.job4j.storage.Item;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Random;
 
 public class Tracker {
 
-    /*private final Item[] items = new Item[100];*/
     private final ArrayList<Item> items = new ArrayList<Item>();
     private int position = 0;
 
@@ -35,10 +33,9 @@ public class Tracker {
 
     public ArrayList<Item> findByName(String key) {
         ArrayList<Item> keep = new ArrayList<Item>();
-        for (Item value : items
-        ) {
+        for (Item value : items) {
             if (value.getName().equals(key)) {
-                 keep.add(value);
+                keep.add(value);
             }
         }
         return keep;
@@ -61,13 +58,10 @@ public class Tracker {
     }
 
     public boolean replace(String id, Item item) throws Exception {
-        boolean result = false;
         int index = indexOf(id);
         if (index != -1) {
             items.set(index, item);
             return true;
-        } else {
-            result = false;
         }
         return false;
     }

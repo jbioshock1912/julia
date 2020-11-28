@@ -13,9 +13,8 @@ public class EditItemAction implements UserAction {
         String id = input.askStr("Enter id");
         if (tracker.replace(id, new Item())) {
             return true;
-        } else {
-            System.out.println("error");
         }
-        return true;
+        System.out.println("error");
+        return false;
     }
 }

@@ -15,6 +15,4 @@ public class CreateAction implements UserAction {
         tracker.add(item);
         return true;
     }
-
-    
 }

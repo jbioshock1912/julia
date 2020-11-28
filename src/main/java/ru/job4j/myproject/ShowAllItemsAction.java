@@ -5,6 +5,7 @@ import ru.job4j.storage.Item;
 import java.util.ArrayList;
 
 public class ShowAllItemsAction implements UserAction {
+
     @Override
     public String name() {
         return "=== Show all items ===";
@@ -13,12 +14,9 @@ public class ShowAllItemsAction implements UserAction {
     @Override
     public boolean execute(Input input, Tracker tracker) {
         ArrayList<Item> items = tracker.findAll();
-        for (Item value: items
-             ) {
+        for (Item value : items) {
             System.out.println(value);
-
         }
-
         return true;
     }
 }

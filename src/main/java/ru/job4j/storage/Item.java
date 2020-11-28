@@ -13,7 +13,6 @@ public class Item implements Comparator<Item> {
     }
 
     public Item() {
-
     }
 
     public String getId() {
@@ -39,11 +38,16 @@ public class Item implements Comparator<Item> {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o) {
+            return true;
+        }
+
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+
         Item item = (Item) o;
-        return Objects.equals(id, item.id) &&
-                Objects.equals(name, item.name);
+        return Objects.equals(id, item.id) && Objects.equals(name, item.name);
     }
 
     @Override
@@ -51,12 +55,9 @@ public class Item implements Comparator<Item> {
         return Objects.hash(id, name);
     }
 
+    @SuppressWarnings("checkstyle:OperatorWrap")
     @Override
     public String toString() {
-        return "Item{" +
-                "id='" + id + '\'' +
-                ", name='" + name + '\'' +
-                '}';
+        return String.format("Item{id='%s', name='%s'}", id, name);
     }
-
 }
