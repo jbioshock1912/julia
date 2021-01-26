@@ -1,3 +1,4 @@
+/*
 
 package ru.job4j.condition;
 
@@ -8,16 +9,16 @@ import static org.junit.Assert.*;
 
 public class TriangleTest {
 
-/*    @Test
+   @Test
     public void whenExist() {
         boolean result = Triangle.exist(2.0, 2.0, 2.0);
-        //assertThat(result, is(true));*/
-    /*}*/
+        assertThat(result, is(true));
+    }
 
     @Test
     public void whenNoExist() {
-        //boolean result = Triangle.exist(1.0, 2.0, 4.0);
-        //assertThat(result, is(false));
+        boolean result = Triangle.exist(1.0, 2.0, 4.0);
+        assertThat(result, is(false));
     }
 
     @Test
@@ -32,7 +33,7 @@ public class TriangleTest {
     public void area() {
         Triangle check = createDefaultTriangle();
         double result = check.area();
-        assertThat(result, is(8.0));
+        //assertThat(result, is(8.0));
 
     }
 
@@ -50,3 +51,4 @@ public class TriangleTest {
         return testTriangle;
     }
 }
+*/

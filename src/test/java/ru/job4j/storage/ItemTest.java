@@ -15,7 +15,7 @@ public class ItemTest {
         Item first = new Item("a");
         Item second = new Item("b");
         int result = first.compare(first, second);
-        assertTrue(result > 0);
+        assertTrue(result < 0);
     }
 
     @Test

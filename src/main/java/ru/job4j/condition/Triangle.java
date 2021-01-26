@@ -34,7 +34,7 @@ public class Triangle {
     }
 
 
-    private boolean exist(double a, double c, double b) {
+    public boolean exist(double a, double c, double b) {
         boolean realTriangle = true;
         double ab = first.distance(second);
         double ac = first.distance(third);
