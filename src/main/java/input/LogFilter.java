@@ -11,7 +11,6 @@ public class LogFilter {
         List<String> linesForFile = new ArrayList<String>();
         try (BufferedReader in = new BufferedReader(new FileReader("E:\\log.txt"))) {
             List<String> lines = new ArrayList<String>();
-
             in.lines().forEach(lines::add);
             for (String line : lines) {
                 String[] split = line.split(" ");
